@@ -1,0 +1,46 @@
+<div class='container'>
+  <div >
+    <h1>Coffeeshop</h1>
+  </div>
+  <div>
+    <h4>Visitor Count: <%= session[:count] %></h4>
+    <h4>Language: <%= session[:language] %></h4>
+  </div>
+  <form action='/' method='POST'>
+    <!-- <div>
+      <label>Background Color:</label>
+      <select name='bgcolor' class='span2'>
+        <option value='#333333'>Gray</option>
+        <option value='#000000'>Black</option>
+        <option value='#ffffff'>White</option>
+      </select>
+    </div> -->
+    <div>
+      <label>Background Color:</label>
+      <input type='color' name='bgcolor' />
+    </div>
+    <div>
+      <label>Language:</label>
+      <select name='language' class='span2'>
+        <option value='en'>English</option>
+        <option value='fr'>Francais</option>
+        <option value='sp'>Espanol</option>
+      </select>
+    </div>
+    <div>
+      <input type='hidden' name='uid' value='' />
+    </div>
+    <div>
+      <input type='submit' class='btn btn-info' value='Sign Up' />
+    </div>
+  </form>
+</div>
+<!-- deleting background color -->
+<div class='container'>
+  <form action = '/remove_bg' method="POST">
+    <!-- this is a workaround to mimic sending a delete request -->
+    <!-- must enable Rack::methodOverride to work -->
+    <input type='hidden' name='_method' value='DELETE' />
+    <input type='submit' class = 'btn btn-info' value='Remove BG' />
+  </form>
+</div>

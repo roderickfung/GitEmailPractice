@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap-responsive.css"/>
+    <link rel="stylesheet" href="google-prettify.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <title>Coffeeshop</title>
+    <style>
+      body {
+        background-color: <%=session[:bgcolor] || 'transparent'%> !important;
+        color: <%=session[:font]%> !important;
+        /*color: <%='#'+session[:font]%> !important;*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <%=yield%>
+    </div>
+  </body>
+</html>
